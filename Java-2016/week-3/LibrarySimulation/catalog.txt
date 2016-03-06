@@ -1,0 +1,10 @@
+Thinking in Java,1000,IT
+Marele urias prietenos,100,Kids
+Something New,100,Technical
+Manualul Tractoristului,120,technical
+New book,800,4
+Testare Java,100,IT
+Decebal,100,History
+Romania,60,4
+Traian,140,history
+Povesti vanatoresti,100,kids
