@@ -1,0 +1,9 @@
+inheritance
+working with text files (open, close, read, write, delete, rename)
+static methods
+console data input (small working menu)
+
+
+any resource you work with needs to be closed after you're done, otherwise the resources might not be available 
+for others like - files in this case (which have to be closed after you're done in case the language does not 
+know automatically) but also memory, network, service etc
