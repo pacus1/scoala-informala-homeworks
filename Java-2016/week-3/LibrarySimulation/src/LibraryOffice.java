@@ -43,6 +43,15 @@ public class LibraryOffice {
 		
 							String bookRow = bookName + "," + noOfPages + "," + type;
 							System.out.println("data sent to file " + bookRow);
+                            /*
+                            TODO - CODE REVIEW
+                            
+                            Think of a real life book. Can a novel add itself to a library? No.
+                            
+                            A more realistic scenario would be:
+                            LibraryCatalog library = new LibraryCatalog();
+                            library.addBook(book);
+                            */
 							book.addNovel(book.getBookName(), book.getBookPages(), book.getNovelType());
 							break;
 						case 2:

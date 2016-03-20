@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 public class LibraryCatalog {
 	
+    // TODO - CODE REVIEW - why are these methods static? We can't have more than one LibraryCatalogs?
 	public static void listCatalog() {
 		FileReader fr = null;
 		BufferedReader br1 = null;
@@ -29,6 +30,33 @@ public class LibraryCatalog {
 			e.printStackTrace();
 		}       			
 		try {
+            /*
+            It is a correct that stream need to be closed. However you should check how it is actually done.
+            
+            Correct way is:
+            
+            FileReader fr = null;
+            try {
+                // open fr and work with it
+            } catch (Exception e) {
+                // handle exceptions
+            } finally {
+                // this block of code is ALWAYS executed. EVEN if the code in try fails.
+                if (fr!=null) {
+                    fr.close();
+                }
+            }
+            
+            or if you work with java 1.8 you can youse try-with-resources, in which case streams and readers
+            declared in the try-block are automatically closed when done:
+            
+            try (FileReader fr = new FileReader(catalogFile)) {
+                // work with fr
+            } catch (Exception e) {
+                // handle exceptions
+            }
+            
+            */
 			fr.close();
 			br1.close();
 		} catch (IOException e) {
