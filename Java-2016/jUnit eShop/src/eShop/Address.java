@@ -1,4 +1,5 @@
 package eShop;
+//use for package something like: ro.scij.pacus.eshop...
 
 public class Address {
 	
