@@ -28,6 +28,7 @@ public class EShopTest{
 	CartEntry cartEntry;
 	
 	//@BeforeClass - why is not possible to use it here
+	// Answer: because of this: http://junit.sourceforge.net/javadoc/org/junit/BeforeClass.html
 	Stock shop = new Stock();
 	
 	@Before
@@ -44,7 +45,8 @@ public class EShopTest{
 		
 		cartEntry = new CartEntry(book,2);
 		shop.decreaseStock(book, cartEntry.getQty());//ask Alex where this check should be placed better 
-					//here in the main procedure or in "AddToCart" method from Cart class (where I wasn't able to add it). 
+					//here in the main procedure or in "AddToCart" method from Cart class (where I wasn't able to add it).
+		//Answer: in addToCart, the addToCart method should hide all kind of operations like stock management or any shop related concerns
 		cart.addToCart(cartEntry);		
 		
 		book1 = new Book("abecedar","copii","Ispirescu",100.0f,654321,20f,CurrencyType.RON);
@@ -103,6 +105,7 @@ public class EShopTest{
 	@Test
 	//add to cart more books than what is currently in stock
 	//ask Alex if for this test is ok to have the initialization code here not only the assertion
+	// Answer: it is ok, however you should not invoke explicitly decrease stock, that should happen automatically when adding to cart
 	public void testShop2() {
 		int shopDecreaseReturn;
 		cartEntry = new CartEntry(book,5);

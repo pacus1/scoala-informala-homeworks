@@ -6,6 +6,7 @@ import java.util.List;
 
 
 public class Cart {
+	// when your variable is a collection, try using the plural: cartEntries
 	private List<CartEntry> cartEntry;
 	private float totalPrice;
 	//private Stock stock;
